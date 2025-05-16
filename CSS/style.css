@@ -1,0 +1,363 @@
+*{
+   box-sizing:border-box ; 
+}
+#Navbar {
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(29, 28, 28, 0.8); /* Couleur de fond semi-transparente */
+    backdrop-filter: blur(10px)!important; /* Effet flou */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+    padding: 10px 20px;
+}
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.hero {
+
+    height: 60vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animation du fond en dégradé mouvant */
+.hero-section {
+    height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-image:
+    linear-gradient(270deg, rgba(1, 7, 66, 0.616), rgba(59, 0, 22, 0.521), rgba(37, 4, 97, 0.6)),
+    url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  
+  background-size: 600% 600%,cover;
+  background-position: 0% 50%, center;
+  background-repeat: no-repeat, no-repeat;
+background-attachment: fixed;
+  animation: backgroundMove 20s ease infinite;
+  }
+  
+  /* Animation du texte en zoom et glow */
+  .hero-title {
+    font-size: 3rem;
+    animation: zoomGlow 3s ease-in-out infinite;
+    text-shadow: 0 0 10px #fff, 0 0 20px #f0f, 0 0 30px #f0f;
+  }
+   .hero-section a {
+    font-size: 2rem;
+   }
+  /* KEYFRAMES */
+  
+  @keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes zoomGlow {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+  }
+  
+@keyframes fadeOverlay {
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.carousel-item img {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.carousel-item img{
+    height: 550px;
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+
+}
+
+
+
+.product-description {
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.product-description::-webkit-scrollbar {
+    width: 6px;
+}
+
+.product-description::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+.product-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: zoomIn 0.6s ease-out;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(38, 0, 141, 0.418);
+}
+
+.image-container {
+    overflow: hidden;
+}
+
+.image-container img {
+    height: 300px;
+}
+
+.zoom-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.zoom-img:hover {
+    transform: scale(1.1);
+}
+
+/* Animation de fade/slide */
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Appliquer l'animation uniquement quand le menu s'affiche */
+.dropdown-menu.show {
+    animation: dropdownFadeIn 0.3s ease-out forwards;
+}
+
+.mega-menu-desktop img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@keyframes floatInfinite {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.img-float {
+    animation: floatInfinite 3s ease-in-out infinite;
+}
+
+@keyframes zoomInfini {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.img-animated {
+    animation: zoomInfini 4s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(13, 110, 253, 0.7);
+        /* couleur du bouton bootstrap primary */
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
+    }
+}
+
+.btn-cta {
+    animation: ctaPulse 2s infinite ease-in-out;
+}
+.navbar-nav .nav-item {
+    margin-right: 1rem; /* Espacement à droite de chaque élément */
+}
+
+.navbar-nav .btn-outline-dark {
+    margin-left: 1rem; /* Espacement à gauche du bouton panier */
+}
+.nav-link {
+    color: white !important
+}
+.nav-link.active {
+    color: #0d6efd !important; /* bleu Bootstrap */
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
+#nav-dashboard a.nav-link {
+    color: #ffffff;
+    display: flex;
+    border:1px solid white !important;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-dashboard .nav-link.active {
+   
+    align-items: center;
+    color: #ffffff !important; /* bleu Bootstrap */
+    font-weight: bold;
+
+}
+
+nav {
+    background: rgba(51, 51, 51, 0.5); /* léger fond noir transparent */
+    box-shadow: 1px 1px   5px  rgba(255, 255, 255, 0.164);
+    backdrop-filter: blur(5px); /* Applique un flou */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilité avec Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ligne subtile en bas de la navbar */
+}
+
+.navbar {
+    backdrop-filter: blur(5px); /* Applique un flou */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilité avec Safari */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Ligne subtile en bas de la navbar */
+}
+.nav-username {
+    text-align: center;
+    font-weight: 500;
+    margin:0 5px;
+    color: #ffffff; /* Gris foncé Bootstrap */
+    padding: 0.4rem 1rem;
+    border-radius: 0.5rem;
+    background: rgba(0, 123, 255); /* léger fond bleu transparent */
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-username:hover {
+    background: rgba(0, 0, 0);
+    color: #ffffff; /* bleu Bootstrap */
+    text-decoration: none;
+  }
+  #descWrapper.expanded {
+    max-height: 300px; /* ou auto si tu veux toute la hauteur */
+    overflow-y: auto;
+    transition: max-height 0.3s ease;
+}
+/* Testimonials */
+.testimonials blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+}
+.testimonials {
+    height: 500px;
+    color: black;
+}
+  
